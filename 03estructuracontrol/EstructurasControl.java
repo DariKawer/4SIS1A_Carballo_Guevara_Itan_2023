@@ -31,14 +31,15 @@ public class EstructurasControl {
         Scanner entrada = new Scanner(System.in); 
         //Crea una instancia del objeto de la entrada por defecto de la computadora para leer caracteres.
 
-        /*int op, numbinario, total, catidadproducto, num1;
+        /*xd nomas por pq me molesta q salga advertencias
+        int op, numbinario, total, catidadproducto, num1;
         float precio, resultado = 0, compra = 0;
         String binario = "";
         String nombreproducto;*/
         char letra;
 
         do {
-            System.out.println("Escoge una de las opciones siguientes papu: ");
+            System.out.println("Escoge una de las siguientes opciones papu: ");
             System.out.println("1.- Descuento por edad ");
             System.out.println("2.- Convertir numero decimal a binario ");
             System.out.println("3.- Conversiones de temperatura ");
