@@ -7,6 +7,6 @@ public class EntradaTexto {
         
         nombre = System.console().readLine();
 
-        System.out.println("Tu nombre es " + nombre + " bienvenido papu");
+        System.out.println("Tu nombre es " + nombre + " bienvenido papugod");
     }
 }
