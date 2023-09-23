@@ -2,6 +2,12 @@
 
 Este es un proyecto de largo plazo ya que me ayudara a fortalecer conocimientos en java
 
+Cabe destacar que en algunos codigos los he modificado para hacerlos mas presentables y con mejor formato
+
+<p align="center">
+  <img height="auto" src="img/papu.gif"/>
+</p>
+
 ## Sobre los comentarios
 
 No es necesario leer los comentarios ya que por si llego a hacer mas proyectos pueda regresar sin problemas
