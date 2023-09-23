@@ -1,3 +1,6 @@
+<p align="center">
+  <img height="50" src="img/papu.jpg"/>  
+</p>
 # Mi Proyecto
 
 Este es un proyecto de largo plazo ya que me ayudara a fortalecer conocimientos en java
