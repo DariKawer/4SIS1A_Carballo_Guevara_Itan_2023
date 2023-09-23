@@ -17,33 +17,23 @@ de seleccion para elegir alguna de las 14 opciones siguientes:
 14.- Salir
 */
 
-//declarar las librerias que vamos a ocupar
 //se debe estructurar el tipo de dato acorde a su entrada
 //si es entero obtenerlo como entero, si es char obtenerlo como caracter
 import java.util.Scanner;
 
 class EstructurasControl {
-    // si declaramos aqui las variables son globales
-
-    // metodo principal
     public static void main(String[] args) {
-        // el manejo de objetos, nos ayuda a poder instancear, (mandando a llamar al
-        // objeto)
-        // para hacer una instancia, es necesario 1.- Identificar el tipo de objeto
+        // para hacer una instancia
+        //1.- Identificar el tipo de objeto
         // 2.- nombrar al objeto
         // 3.- crear al objeto
         @SuppressWarnings("resource")
         Scanner entrada = new Scanner(System.in);
-        // crear una instancia del objeto de la entrada por defecto de la computadora
-        // vamos a identificar con Scanner el tipo de dato que sse esta instanceando
         // entrada es el objeto que va a poder identificar si es int, double, float, etc
 
-        // es declarar a las variables que se van a utilizar en el programa
-        // las variables son 2 tipos: globales y locales
-        // si la declaro dentro de un metodo es local
-
-        int opcion, numbinario, total, cantidadproducto, edad, numero, conpositivos = 0, connegativos = 0;
+        int opcion, numbinario, total, cantidadproducto, edad, numero, conpositivos = 0, connegativos = 0, acum = 0, num;
         float precio, resultado, compra = 0, temperatura;
+        long factorial;
         double descuento = 0, C, F, K, R, base, altura, area, perimetro, radio, volumen;
         String nombreproducto, nombres = "", binario = "", respuesta, positivos = "", negativos = "";
         char letra;
@@ -54,14 +44,14 @@ class EstructurasControl {
             System.out.println("======================================");
             System.out.println("Elije alguna opción deseada: ");
             System.out.println("1.- Descuento por edad ");
-            System.out.println("2.- Convertir numero decimal a binario ");// maestro
+            System.out.println("2.- Convertir numero decimal a binario ");// el papu mayor
             System.out.println("3.- Convertir Temperaturas ");
             System.out.println("4.- Numeros Positivos y Negativos ");
-            System.out.println("5.- Tiendita ");// maestro
+            System.out.println("5.- Tiendita ");// el papu mayor
             System.out.println("6.- Area y Perimetro ");
-            System.out.println("7.- Tabla ");// maestro
+            System.out.println("7.- Tabla ");// el papu mayor
             System.out.println("8.- Factorial ");
-            System.out.println("9.- Dibujito ");// maestro
+            System.out.println("9.- Dibujito ");// el papu mayor
             System.out.println("10.- Figura Hueca ");
             System.out.println("11.- Patrones de Codigo ");
             System.out.println("12.- Diamante ");
@@ -301,28 +291,169 @@ class EstructurasControl {
                             System.out.println("Opción no válida.");
                             break;
                 }
-                    break;
+            break;
 
             case 7:
-                break;
-            case 8:
-                break;
-            case 9:
-                break;
-            case 10:
-                break;
-            case 11:
-                break;
-            case 12:
-                break;
-            case 13:
-                break;
-            case 14:
+                System.out.println("==============================================");
+                System.out.println("Ingrese la cantidad a mostrar: ");
+                total  = entrada.nextInt();
+                System.out.println("==============================================");
+ 
+                for(int x=1; x <= total; x++) {
+                    System.out.printf("| %6d | %7d  | %8d   | %10d   |\n", x, x * 10, x * 100, x * 1000);
+                    //printf sirve para darle formato y sirve para hacer tablas ordenadas sin necesidad de tener que ir checando la anchura como en pseintzzzz
+                }
+            break;
 
-                break;
+            case 8:
+                System.out.println("==============================================");
+                System.out.println("Ingrese un numero no negativo: ");
+                num  = entrada.nextInt();
+                System.out.println("==============================================");
+
+                if (num < 0) {
+                    System.out.println("El numero debe ser no negativo");
+                } else {
+                    factorial = 1;
+                    for (int x = 1; x <= num; x++) {
+                        factorial = factorial * x;
+                    }   
+                    System.out.println("Factorial: " + factorial);
+                }
+            break;
+
+            case 9:
+                System.out.println("==============================================");
+                System.out.println("Ingrese el total del lado (no mayor a 20): ");
+                total = entrada.nextInt();
+                System.out.println("==============================================");
+
+                if (total <= 0) {
+                    System.out.println("El tamaño del lado debe ser mayor que 0.");
+                } else if (total > 20) {
+                    System.out.println("El tamaño del lado debe ser menor o igual a 20.");
+                } else {
+                    for (int i = 1; i <= total; i++) {
+                        for (int j = 1; j <= total; j++) {
+                            System.out.print("* ");
+                        }
+                        System.out.println();
+                    }
+                }
+                
+            break;
+
+            case 10:
+                System.out.println("==============================================");
+                System.out.println("Ingrese el total del lado (no mayor a 20): ");
+                total = entrada.nextInt();
+                System.out.println("==============================================");
+
+                if (total <= 0) {
+                    System.out.println("El tamaño del lado debe ser mayor que 0.");
+                } else if (total > 20) {
+                    System.out.println("El tamaño del lado debe ser menor o igual a 20.");
+                } else {
+                    for (int i = 1; i <= total; i++) {
+                        for (int j = 1; j <= total; j++) {
+                            /*
+                             * Como es el mismo codigo es necesario agregar un if que cheque linea por linea lo siguiente
+                             * Se checa primero que i se compare a 1 sino
+                             * Se checa que i se compare a total sino
+                             * Se checa que j se compare a 1 sino
+                             * Se checa que j se compare a total
+                             * y sino imprime espacio
+                             * 
+                             * ejemplo iniciamos 5 
+                             * 1 == 1, 1 == 5, 1 == 1, 1 == 5
+                             * Como hay dos comparaciones que si son correctas se imprime "* " hasta el total
+                             * pero si va por ejemplo en la linea 2, 3 y 4
+                             * 3 == 1, 3 == 5, 3 == 1, 3 == 5
+                             * Ninguna comparacion es correcta es decir que 2, 3 y 4 no es igual a 1 o al total
+                             * Por lo tanto se imprime " "
+                             */
+                            if (i == 1 || i == total || j == 1 || j == total) {
+                                System.out.print("* ");
+                            } else {
+                                System.out.print("  ");
+                            }
+                        }
+                        System.out.println();
+                    }
+                }
+            break;
+
+            case 11:
+                //SU PROGRAMA SOLO PUEDE USAR (“ ”), (“* ”), (“\N) 
+                System.out.println("==============================================");
+                System.out.println("Ingrese la cantidad a imprimir: ");
+                total = entrada.nextInt();
+                System.out.println("==============================================");
+
+                for (int i = 1; i <= total; i++) {
+                    if (i % 2 == 1) {
+                        for (int j = 1; j <= 8; j++) {
+                            System.out.print("* ");
+                        }
+                    } else {
+                        System.out.print(" ");
+                        for (int j = 1; j <= 8; j++) {
+                            System.out.print("* ");
+                        }
+                    }
+                    System.out.print("\n");
+                }
+
+            break;
+
+            case 12:
+                System.out.println("==============================================");
+                System.out.println("Ingrese la cantidad a imprimir: ");
+                total = entrada.nextInt();
+                System.out.println("==============================================");
+
+                for (int i = 1; i <= total; i++) {//i = 1 hasta que llegue a total para el bucle y termina
+                    for (int j = 1; j <= total - i; j++) {//La cantidad de "0" disminuye a medida que i aumenta es decir que si pongo 20 (imprimira 19 "0")
+                        System.out.print(" ");//"0"
+                        //Aqui no se pone println para respetar la continuidad de la impresion
+                    }
+                    for (int k = 1; k <= 2 * i - 1; k++) {//La cantidad de "1" aumenta a medida que i aumenta es decir que si pongo 20(imprimira  39 "1")
+                        System.out.print("*");//"1"
+                        //Aqui se hace lo mismo se respeta la continuidad
+                    }
+                    System.out.println(/*Aca no se pone " " ya que no es necesario pq es salto de linea */);// y ya al terminar el bucle osea despues de poner "0" y "1" se va a la siguiente linea hasta que termine
+                }
+
+                //entonces para completarlo tendria que ser lo mismo pero ahora en lugar de i++ seria i--
+                for (int i = total - 1; i >= 1; i--) {//Empieza desde el total para despues disminuir para no verse feo en el total se resta una linea para verse bien el rombo e ira en descendencia y termina hasta que sea i sea igual a 1
+                    for (int j = 1; j <= total - i; j++) {//aca es todo lo contrario; La cantidad de "0" aumenta a medida que i disminuye
+                        System.out.print(" ");//"0"
+                    }
+                    for (int k = 1; k <= 2 * i - 1; k++) {//La cantidad de "1" disminuye a medida que i aumenta
+                        System.out.print("*");//"1"
+                    }
+                    System.out.println();
+                }
+            break;
+
+            case 13:
+            /*
+             * DESARROLLE UN ALGORITMO QUE PERMITA EL DESARROLLO DE UNA CALCULADORA CONVENCIONAL 
+             * CON SUMA RESTA MULTIPLICACIÓN Y DIVISIÓN, DEBERÁ UN INCLUIR UN MENU DE ENTRADA A 
+             * LAS OPERACIONES Y QUE PERMITA ELEGIR ENTRE OTRA OPERACIÓN O SALIR DEL PROGRAMA.
+             * (PUEDE UTILIZAR LIBRERÍA SWING CON OPCION JOPTIONPANE INVESTIGACIÓN)  
+             */
+
+            break;
+
+            case 14:
+                System.out.println("Saliendo del programa papu.");
+                System.exit(0);
+            break;
+
             default:
                 System.out.println("Elija una opcion valida papu malo");
-                break;
+            break;
         }
 
         System.out.println("======================================");
