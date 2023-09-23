@@ -29,7 +29,7 @@ class EstructurasControl {
         // 3.- crear al objeto
         @SuppressWarnings("resource")
         Scanner entrada = new Scanner(System.in);
-        // entrada es el objeto que va a poder identificar si es int, double, float, etc
+        // entrada es el objeto que va a poder identificar si es int, double, float
 
         int opcion, numbinario, total, cantidadproducto, edad, numero, conpositivos = 0, connegativos = 0, acum = 0, num;
         float precio, resultado, compra = 0, temperatura;
