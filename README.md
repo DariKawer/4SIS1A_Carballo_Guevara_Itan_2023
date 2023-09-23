@@ -1,5 +1,5 @@
 <p align="center">
-  <img height="50" src="img/papu.jpg"/>  
+  <img height="auto" src="img/papu.jpg"/>  
 </p>
 # Mi Proyecto
 
