@@ -1,5 +1,5 @@
 /* 
-Vamos a crear un rpograma mediante el cual debamos tener un menu
+Vamos a crear un programa mediante el cual debamos tener un menu
 de seleccion para elegir alguna de las 14 opciones siguientes:
 1.- Bono o descuento por edad
 2.- Convertir numeros decimales a binarios 
@@ -16,22 +16,23 @@ de seleccion para elegir alguna de las 14 opciones siguientes:
 13.- Calculadora
 14.- Salir
 */
+//importación de librerias
+import java.util.*;
+import javax.swing.*;
 
-//se debe estructurar el tipo de dato acorde a su entrada
-//si es entero obtenerlo como entero, si es char obtenerlo como caracter
-import java.util.Scanner;
-
-class EstructurasControl {
+//Como el archivo "Calculadora.java" esta en el mismo directorio no es necesario importar o usar package ya q es un lio hasta para mi logica XD
+class EstructurasControl extends Calculadora {
     public static void main(String[] args) {
         // para hacer una instancia
         //1.- Identificar el tipo de objeto
         // 2.- nombrar al objeto
         // 3.- crear al objeto
+
+        //nomas pa q no me joda la extension que tengo
         @SuppressWarnings("resource")
         Scanner entrada = new Scanner(System.in);
-        // entrada es el objeto que va a poder identificar si es int, double, float
 
-        int opcion, numbinario, total, cantidadproducto, edad, numero, conpositivos = 0, connegativos = 0, acum = 0, num;
+        int opcion, numbinario, total, cantidadproducto, edad, numero, conpositivos = 0, connegativos = 0, num;
         float precio, resultado, compra = 0, temperatura;
         long factorial;
         double descuento = 0, C, F, K, R, base, altura, area, perimetro, radio, volumen;
@@ -72,7 +73,6 @@ class EstructurasControl {
                     } else if (edad <= 21) {
                         System.out.println("Tus padres son socios? (Si/No)");
                         respuesta = entrada.next();
-
                         if (respuesta.equals("Si") || respuesta.equals("si")) {
                             descuento = 0.45 * 100;
                             System.out.println("Tenes un descuento del " + descuento + "%.");
@@ -81,7 +81,7 @@ class EstructurasControl {
                             System.out.println("Tenes un descuento del " + descuento + "%.");
                         }
                     }
-                    break;
+                break;
 
                 case 2:
                     System.out.println("=================================================================");
@@ -103,7 +103,7 @@ class EstructurasControl {
                         binario = " No se puede convertir un numero negativo, solo positivos ";
                     }
                     System.out.println("El numero binario es: " + binario);
-                    break;
+                break;
 
                 case 3:
                     System.out.println("======================================");
@@ -126,7 +126,7 @@ class EstructurasControl {
                             System.out.println("Grados Kelvin: " + K + "K");
                             R = (temperatura + 273.15) * 9 / 5;
                             System.out.println("Grados Rankine: " + R + "°R");
-                            break;
+                        break;
 
                         case 2:
                             System.out.println("======================================");
@@ -139,7 +139,7 @@ class EstructurasControl {
                             System.out.println("Grados Kelvin: " + K + "K");
                             R = temperatura * 9 / 5;
                             System.out.println("Grados Rankine: " + R + "°R");
-                            break;
+                        break;
 
                         case 3:
                             System.out.println("======================================");
@@ -152,7 +152,7 @@ class EstructurasControl {
                             System.out.println("Grados Fahrenheit: " + F + "°F");
                             R = temperatura * 9 / 5;
                             System.out.println("Grados Rankine: " + R + "°R");
-                            break;
+                        break;
 
                         case 4:
                             System.out.println("======================================");
@@ -165,13 +165,13 @@ class EstructurasControl {
                             System.out.println("Grados Fahrenheit: " + F + "°F");
                             K = temperatura / 1.8;
                             System.out.println("Grados Kelvin: " + K + "K");
-                            break;
+                        break;
 
                         default:
                             System.out.println("Ingrese la opcion correcta");
-                            break;
+                        break;
                     }
-                    break;
+                break;
 
                 case 4:
                     System.out.println("========================================");
@@ -181,7 +181,6 @@ class EstructurasControl {
                     for (int i = 1; i <= total; i++) {
                         System.out.println("Ingrese el numero " + i + " : ");
                         numero = entrada.nextInt();
-
                         if (numero > 0) {
                             conpositivos++;
                             positivos += Integer.toString(numero) + "\n";
@@ -197,7 +196,7 @@ class EstructurasControl {
                     System.out.println("========================================");
                     System.out.println("Numeros negativos en total: " + connegativos);
                     System.out.println(negativos);
-                    break;
+                break;
 
                 case 5:
                     System.out.println("========================================");
@@ -225,7 +224,7 @@ class EstructurasControl {
                     System.out.println("TOTAL COMPRADO:");
                     System.out.println(compra + " pesos");
                     compra = 0;
-                    break;
+                break;
 
                 case 6:
                     System.out.println("==============================================");
@@ -340,7 +339,6 @@ class EstructurasControl {
                         System.out.println();
                     }
                 }
-                
             break;
 
             case 10:
@@ -403,7 +401,6 @@ class EstructurasControl {
                     }
                     System.out.print("\n");
                 }
-
             break;
 
             case 12:
@@ -437,13 +434,10 @@ class EstructurasControl {
             break;
 
             case 13:
-            /*
-             * DESARROLLE UN ALGORITMO QUE PERMITA EL DESARROLLO DE UNA CALCULADORA CONVENCIONAL 
-             * CON SUMA RESTA MULTIPLICACIÓN Y DIVISIÓN, DEBERÁ UN INCLUIR UN MENU DE ENTRADA A 
-             * LAS OPERACIONES Y QUE PERMITA ELEGIR ENTRE OTRA OPERACIÓN O SALIR DEL PROGRAMA.
-             * (PUEDE UTILIZAR LIBRERÍA SWING CON OPCION JOPTIONPANE INVESTIGACIÓN)  
-             */
-
+                System.out.println("Listo papu ya abri una nueva ventana, checa en tu barra de escritorio B)");
+                SwingUtilities.invokeLater(() -> {
+                    new Calculadora();
+                });
             break;
 
             case 14:
@@ -457,7 +451,7 @@ class EstructurasControl {
         }
 
         System.out.println("======================================");
-        System.out.println("Deseas repetir el programa papu? (S/N)");
+        System.out.println("Deseas repetir el programa principal papu? (S/N)");
         letra = entrada.next().charAt(0);
 
     } while (letra == 'S' || letra == 's');
