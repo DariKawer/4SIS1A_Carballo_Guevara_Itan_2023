@@ -14,7 +14,7 @@ public class Calculadora {
 
     public Calculadora() {
         base();
-        }
+    }
 
     private void base() {
         interfaz = new JFrame();
@@ -120,6 +120,7 @@ public class Calculadora {
         panel.add(segundonum);
 
         sumar.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e) {
                 String primerNumero = primernum.getText();
                 String segundoNumero = segundonum.getText();
@@ -146,12 +147,7 @@ public class Calculadora {
         regresar.setPreferredSize(new Dimension(400, 40));
         regresar.setFocusable(false);
 
-        regresar.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                interfaz.dispose();
-                base();
-            }
-        });
+        regresar.addActionListener(regresarbutton);
         interfaz.add(panel, BorderLayout.CENTER);
         interfaz.add(regresar, BorderLayout.SOUTH);
         interfaz.setVisible(true);
@@ -184,6 +180,7 @@ public class Calculadora {
         panel.add(segundonum);
 
         sumar.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e) {
                 String primerNumero = primernum.getText();
                 String segundoNumero = segundonum.getText();
@@ -210,12 +207,7 @@ public class Calculadora {
         regresar.setPreferredSize(new Dimension(400, 40));
         regresar.setFocusable(false);
 
-        regresar.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                interfaz.dispose();
-                base();
-            }
-        });
+        regresar.addActionListener(regresarbutton);
         interfaz.add(panel, BorderLayout.CENTER);
         interfaz.add(regresar, BorderLayout.SOUTH);
         interfaz.setVisible(true);
@@ -248,6 +240,7 @@ public class Calculadora {
         panel.add(segundonum);
 
         sumar.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e) {
                 String primerNumero = primernum.getText();
                 String segundoNumero = segundonum.getText();
@@ -274,12 +267,7 @@ public class Calculadora {
         regresar.setPreferredSize(new Dimension(400, 40));
         regresar.setFocusable(false);
 
-        regresar.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                interfaz.dispose();
-                base();
-            }
-        });
+        regresar.addActionListener(regresarbutton);
         interfaz.add(panel, BorderLayout.CENTER);
         interfaz.add(regresar, BorderLayout.SOUTH);
         interfaz.setVisible(true);
@@ -312,6 +300,7 @@ public class Calculadora {
         panel.add(segundonum);
 
         sumar.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e) {
                 String primerNumero = primernum.getText();
                 String segundoNumero = segundonum.getText();
@@ -338,16 +327,19 @@ public class Calculadora {
         regresar.setPreferredSize(new Dimension(400, 40));
         regresar.setFocusable(false);
 
-        regresar.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                interfaz.dispose();
-                base();
-            }
-        });
+        regresar.addActionListener(regresarbutton);
         interfaz.add(panel, BorderLayout.CENTER);
         interfaz.add(regresar, BorderLayout.SOUTH);
         interfaz.setVisible(true);
     }
+
+    private ActionListener regresarbutton = new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            interfaz.dispose();
+            base();
+        }
+    };
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> 

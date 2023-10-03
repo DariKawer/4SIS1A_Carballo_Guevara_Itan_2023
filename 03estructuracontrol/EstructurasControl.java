@@ -1,22 +1,3 @@
-/* 
-Vamos a crear un programa mediante el cual debamos tener un menu
-de seleccion para elegir alguna de las 14 opciones siguientes:
-1.- Bono o descuento por edad
-2.- Convertir numeros decimales a binarios 
-3.- Convertir Temperaturas
-4.- Numeero de positivos y negativos
-5.- Tiendita
-6.- Area y Perimetro
-7.- Tabla
-8.- Factorial
-9.- Dibujitos
-10.- Figura Hueca
-11.- Patron 
-12.- Diamante
-13.- Calculadora
-14.- Salir
-*/
-//importación de librerias
 import java.util.*;
 import javax.swing.*;
 
@@ -40,6 +21,9 @@ class EstructurasControl extends Calculadora {
         char letra;
 
         do {
+            System.out.print("\u001b[2J");
+            System.out.flush();
+
             System.out.println("======================================");
             System.out.println("     Bienvenido al programa papu");
             System.out.println("======================================");
@@ -63,11 +47,14 @@ class EstructurasControl extends Calculadora {
 
             switch (opcion) {
                 case 1:
+                    do {
+                    System.out.print("\u001b[2J");
+                    System.out.flush();
                     System.out.println("======================================");
                     System.out.println("Ingresa tu edad papu: ");
                     edad = entrada.nextInt();
 
-                    if (edad > 65) {
+                    if (edad < 65) {
                         descuento = 0.4 * 100;
                         System.out.println("Tenes un descuento del " + descuento + "%.");
                     } else if (edad <= 21) {
@@ -81,6 +68,11 @@ class EstructurasControl extends Calculadora {
                             System.out.println("Tenes un descuento del " + descuento + "%.");
                         }
                     }
+                    
+                    System.out.println("======================================");
+                    System.out.println("Deseas repetir el subprograma papu? (S/N)");
+                    respuesta = entrada.next();
+                    } while (respuesta.equals("S") || respuesta.equals("s"));
                 break;
 
                 case 2:
