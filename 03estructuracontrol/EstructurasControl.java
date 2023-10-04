@@ -37,8 +37,8 @@ class EstructurasControl extends Calculadora {
             System.out.println("7.- Tabla ");// el papu mayor
             System.out.println("8.- Factorial ");
             System.out.println("9.- Dibujito ");// el papu mayor
-            System.out.println("10.- Figura Hueca ");
-            System.out.println("11.- Patrones de Codigo ");
+            System.out.println("10.- Cuadro Magico ");
+            System.out.println("11.- Desplazamiento de un cuadrito ");
             System.out.println("12.- Diamante ");
             System.out.println("13.- Calculadora ");
             System.out.println("14.- Salir ");
