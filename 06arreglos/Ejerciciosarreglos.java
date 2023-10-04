@@ -15,6 +15,6 @@
  * La cantidad de alumnos aprobados y reprobados. 
  */
 
-public class Ejercicios {
+public class Ejerciciosarreglos {
     
 }
