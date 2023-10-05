@@ -20,7 +20,7 @@ Conforme vaya checando cada archivo y lo termine ire actualizando la tabla
 | 6 | Ejerciciosclases.java    | ✅       | ✅        |
 | 7 | Figuras.java             | ✅       | ✅        |
 | 8 | Arreglos.java            | ✅       | ✅        |
-| 9 | Ejerciciosarreglos.java  | ❌       | ❌        |
+| 9 | Ejerciciosarreglos.java  | ✅       | ✅        |
 |10 | Cadena.java              | ✅       | ✅        |
 
 
