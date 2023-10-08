@@ -412,26 +412,16 @@ public class Ahorcado {
         String[] palabras = { "internacional", "responsabilidad", "comunicacion", "concentracion", "participacion",
                 "conservacion", "investigacion", "diversificacion", "colaboracion", "administracion" };
         String[][] pistas = {
-                { "Empieza por la letra i", "Termina por la letra l",
-                        "Puede referirse a acuerdos, tratados, organizaciones, eventos deportivos, etc." },
-                { "Empieza por la letra r", "Termina por la letra d",
-                        "Es un concepto importante en ética, derecho y gestión" },
-                { "Empieza por la letra c", "Termina por la letra n",
-                        "Puede ser verbal (hablar), no verbal (gestos), escrita o visual" },
-                { "Empieza por la letra c", "Termina por la letra n",
-                        "Es la acción o el poder de enfocar la atención o el pensamiento mental" },
-                { "Empieza por la letra p", "Termina por la letra n",
-                        "Es el acto de tomar parte en una actividad o evento" },
-                { "Empieza por la letra c", "Termina por la letra n",
-                        "Es la protección y preservación del medio ambiente natural" },
-                { "Empieza por la letra i ", "Termina por la letra n",
-                        "Los métodos pueden incluir experimentos, encuestas, observaciones, entrevistas y más" },
-                { "Empieza por la letra d", "Termina por la letra n",
-                        "Es la estrategia de aumentar la variedad para reducir el riesgo o aumentar el rendimiento" },
-                { "Empieza por la letra c", "Termina por la letra n",
-                        "Es el acto de trabajar juntos para lograr un objetivo común" },
-                { "Empieza por la letra a", "Termina por la letra n",
-                        "Incluye funciones como planificación, organización, dirección y control" }
+                { "Empieza por la letra i", "Termina por la letra l", "Puede referirse a acuerdos, tratados, organizaciones, eventos deportivos, etc." },
+                { "Empieza por la letra r", "Termina por la letra d", "Es un concepto importante en ética, derecho y gestión" },
+                { "Empieza por la letra c", "Termina por la letra n", "Puede ser verbal (hablar), no verbal (gestos), escrita o visual" },
+                { "Empieza por la letra c", "Termina por la letra n", "Es la acción o el poder de enfocar la atención o el pensamiento mental" },
+                { "Empieza por la letra p", "Termina por la letra n", "Es el acto de tomar parte en una actividad o evento" },
+                { "Empieza por la letra c", "Termina por la letra n", "Es la protección y preservación del medio ambiente natural" },
+                { "Empieza por la letra i ", "Termina por la letra n", "Los métodos pueden incluir experimentos, encuestas, observaciones, entrevistas y más" },
+                { "Empieza por la letra d", "Termina por la letra n", "Es la estrategia de aumentar la variedad para reducir el riesgo o aumentar el rendimiento" },
+                { "Empieza por la letra c", "Termina por la letra n", "Es el acto de trabajar juntos para lograr un objetivo común" },
+                { "Empieza por la letra a", "Termina por la letra n", "Incluye funciones como planificación, organización, dirección y control" }
         };
 
         Random random = new Random();
@@ -500,7 +490,6 @@ public class Ahorcado {
                                     "¡Felicidades! Has adivinado la palabra: " + palabraAleatoria);
                             int respuesta = JOptionPane.showConfirmDialog(interfaz, "¿Quieres jugar de nuevo?",
                                     "Jugar de nuevo?", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
-
                             if (respuesta == JOptionPane.YES_OPTION) {
                                 Facilito();
                             } else {

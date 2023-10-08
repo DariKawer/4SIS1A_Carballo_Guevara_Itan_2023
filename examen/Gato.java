@@ -2,10 +2,10 @@
  * Construye un programa que permita jugar el juego del GATO, 
  * solo pueden tirar 2 jugadores tendrá la opción para que juegues contra la máquina, 
  * hay que volver a correr el programa de nuevo cada vez que gana alguno de los jugadores  o se empata.
+*/
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 
 public class Gato {
     
@@ -36,4 +36,3 @@ public class Gato {
     }
 
 }
-*/

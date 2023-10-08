@@ -5,11 +5,10 @@
  * cuando este una mina cerca  y cuando teclee una posición donde hay una mina el usuario perderá,
  * tendrá la opción de indicarle al usuario si desea repetir el juego. Si tu así lo prefieres las 
  * minas puedes ser incrustadas aleatoriamente con un RANDOM .
-
+*/
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 
 public class Buscaminas {
     
@@ -39,4 +38,3 @@ public class Buscaminas {
         );
     }
 }
-*/
