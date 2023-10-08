@@ -1,10 +1,8 @@
 import java.util.*;
-
 public class EntradaTexto {
     public static void main(String[] args) {
         String nombre;
         
-
         @SuppressWarnings("resource")
         Scanner entrada = new Scanner(System.in);
 

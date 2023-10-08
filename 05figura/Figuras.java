@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Figuras {
     double lado, altura, area, perimetro, base, ladoA, ladoB, ladoC;

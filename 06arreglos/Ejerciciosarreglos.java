@@ -1,5 +1,4 @@
 import java.util.*;
-
 public class Ejerciciosarreglos {
     Scanner entrada = new Scanner(System.in);
     int opcion;

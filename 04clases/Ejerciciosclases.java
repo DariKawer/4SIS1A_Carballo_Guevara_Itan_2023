@@ -46,20 +46,16 @@ public class Ejerciciosclases {
         System.out.println("a.- Suma y Resta");
         System.out.println("b.- Multiplicación");
         System.out.println("c.- División");
-
         operacion = entrada.next().charAt(0);
 
         switch(operacion){
             case 'a': //Suma y Resta
-                //vamos a sumar o restar tantos numeros como desee el usuario
-                //cuando coloque 0 la operacion termina
                 System.out.println("Para detener la suma o resta, ingrese el 0");
                 
                 do{
                     System.out.println("Escriba el numero que desee sumar o restar: ");
                     num1 = entrada.nextDouble();
                     suma += num1;
-                    //suma = suma + num1;
                 }while(num1 != 0);
                 System.out.println("El resultado de la operacion es: " + suma);
             break;
@@ -72,7 +68,6 @@ public class Ejerciciosclases {
                     num1 = entrada.nextDouble();
                     if(num1 != 0){
                         multi *= num1;
-                        //multi = multi * num1;
                     }
                                   
                     

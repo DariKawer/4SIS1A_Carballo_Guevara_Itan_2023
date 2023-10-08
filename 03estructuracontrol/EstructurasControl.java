@@ -1,6 +1,5 @@
 import java.util.*;
 import javax.swing.*;
-
 //Como el archivo "Calculadora.java" esta en el mismo directorio no es necesario importar o usar package ya q es un lio hasta para mi logica XD
 class EstructurasControl extends Calculadora {
     public static void main(String[] args) {
@@ -8,7 +7,6 @@ class EstructurasControl extends Calculadora {
         //1.- Identificar el tipo de objeto
         // 2.- nombrar al objeto
         // 3.- crear al objeto
-
         //nomas pa q no me joda la extension que tengo
         @SuppressWarnings("resource")
         Scanner entrada = new Scanner(System.in);

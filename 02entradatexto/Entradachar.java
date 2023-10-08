@@ -4,7 +4,6 @@ public class Entradachar {
     public static void main(String[] args) {
         char letra;
         System.out.print("Ingresa una palabra: ");
-        
         @SuppressWarnings("resource")//ayuda a ignorar la advertencia por una extension q tengo XDDD
         Scanner entrada = new Scanner(System.in);
 

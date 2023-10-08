@@ -1,7 +1,6 @@
 import java.util.*;
 
 public class Cadena {
-    
     //como su nombre lo dice las funciones de cadena nos sirven para
     //poder manipular comparar disernir cadenas de texto
 

@@ -22,6 +22,7 @@ Conforme vaya checando cada archivo y lo termine ire actualizando la tabla
 | 8 | Arreglos.java            | ✅       | ✅        |
 | 9 | Ejerciciosarreglos.java  | ✅       | ✅        |
 |10 | Cadena.java              | ✅       | ✅        |
+|11 | Ahorcado.java            | ❌       | ✅        |
 
 
 ## Siganme pe

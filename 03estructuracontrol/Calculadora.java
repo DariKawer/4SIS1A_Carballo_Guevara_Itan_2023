@@ -3,11 +3,9 @@
  * Recomiendo nomas leer la documentacion de swing y awt
  * y ver videos de la india ez
  */
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-
 public class Calculadora {
 
     private JFrame interfaz;

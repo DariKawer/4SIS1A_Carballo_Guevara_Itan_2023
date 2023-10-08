@@ -1,14 +1,11 @@
 import java.util.*;
 
 public class Arreglos {
-
     public static void main(String[] args){
         /*
         vamos a realizar un arreglo unidimensional y correrlo para ver que hay 
         en cada elemento 
         
-         
-
         //como se define un arreglo
         int arreglo[] = new int[10];
         //estoy definiendo un arreglo de enteros de tamaño 10
