@@ -146,6 +146,9 @@ public class Ahorcado {
     private int cantidadpistas;
 
     private void Facilito() {
+        JOptionPane.showMessageDialog(interfaz, 
+            "Reglas:\n-Tendras 3 pistas cada vez q falles (las pistas se iran revelando dependiendo del modo)\n-Si llegas a 0 intentos pierdes automaticamente\n-Solo tendras que ingresar LETRAS\n-No falles (obligatorio)",
+            "Advertencia", JOptionPane.WARNING_MESSAGE);
         int maximointentos = 10;
         String[] palabras = { "camara", "estudio", "libreta", "boligrafo", "elefante", "girafa", "teclado", "monitor",
                 "ventana", "cocina" };
@@ -177,6 +180,7 @@ public class Ahorcado {
         interfaz.repaint();
         interfaz.setSize(650, 550);
         interfaz.setLocationRelativeTo(null);
+        //interfaz.addWindowListener(Cerrar);
 
         ImageIcon imagen = new ImageIcon("bg.png");
         imagen.setImage(imagen.getImage().getScaledInstance(250, 250, Image.SCALE_SMOOTH));
@@ -272,6 +276,9 @@ public class Ahorcado {
     }
 
     private void Medio() {
+        JOptionPane.showMessageDialog(interfaz, 
+            "Reglas:\n-Tendras 3 pistas cada vez q falles (las pistas se iran revelando dependiendo del modo)\n-Si llegas a 0 intentos pierdes automaticamente\n-Solo tendras que ingresar LETRAS\n-No falles (obligatorio)",
+            "Advertencia", JOptionPane.WARNING_MESSAGE);
         int maximointentos = 8;
         String[] palabras = { "descubrir", "aeropuerto", "mariposas", "estrellas", "espectaculo",
                 "confianza", "motivacion", "diversion", "educacion", "comunidad" };
@@ -408,6 +415,9 @@ public class Ahorcado {
     }
 
     private void Dificilito() {
+        JOptionPane.showMessageDialog(interfaz, 
+            "Reglas:\n-Tendras 3 pistas cada vez q falles (las pistas se iran revelando dependiendo del modo)\n-Si llegas a 0 intentos pierdes automaticamente\n-Solo tendras que ingresar LETRAS\n-No falles (obligatorio)",
+            "Advertencia", JOptionPane.WARNING_MESSAGE);
         int maximointentos = 6;
         String[] palabras = { "internacional", "responsabilidad", "comunicacion", "concentracion", "participacion",
                 "conservacion", "investigacion", "diversificacion", "colaboracion", "administracion" };
@@ -531,6 +541,20 @@ public class Ahorcado {
 
         interfaz.setVisible(true);
     }
+
+
+    /*
+    Tengo que arreglar esto ya que aparece muchas veces
+    WindowListener Cerrar = new WindowAdapter() { 
+        @Override
+            public void windowClosing(WindowEvent e) {
+                int option = JOptionPane.showConfirmDialog(interfaz, "¿Estás seguro de que quieres salir?", "Confirmar salida", JOptionPane.YES_NO_OPTION);
+
+                if (option == JOptionPane.YES_OPTION) {
+                    menu();
+                }
+            }
+    };*/
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> new Ahorcado());
