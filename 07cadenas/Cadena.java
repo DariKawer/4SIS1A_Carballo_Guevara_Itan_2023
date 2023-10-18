@@ -88,7 +88,7 @@ public class Cadena {
     }
 
     public static void main(String[] args) {
-        Cadena obj = new Cadena();
-        obj.cadenas();
+        Cadena cadenas = new Cadena();
+        cadenas.cadenas();
     }
 }
