@@ -23,15 +23,9 @@ Conforme vaya checando cada archivo y lo termine ire actualizando la tabla
 | 9 | Ejerciciosarreglos.java  | ✅       | ✅        |
 |10 | Cadena.java              | ✅       | ✅        |
 |11 | Ahorcado.java            | ❌       | ✅        |
-
-
-## Siganme pe
-
-Instagram:
-https://www.instagram.com/dari.kawer/
+|12 | Cadenainvertida.java     | ✅       | ✅        |
+|13 | Palindromo.java          | ✅       | ✅        |
+|14 | Animal.java              | ✅       | ✅        |
 
 ## Licencia
-
-Si deseas hacer c&p no recomiendo ya que no aprenderas nada (en mis primeros 2 en programacion fue de c&p y realmente no recomiendo por nada en el mundo que lo hagas)
-Este proyecto está bajo la Licencia Darkken - proximamente sera real?
-Autor: Dari Kawer
+Autor: Itan Carballo
