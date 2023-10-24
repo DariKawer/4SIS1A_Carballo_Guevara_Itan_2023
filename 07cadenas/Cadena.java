@@ -25,7 +25,7 @@ public class Cadena {
         //ahora vamos a asignar una cadena mas a partir de una variable
 
         System.out.println("Ingresa una palabra: ");
-        String s2 = entrada.nextLine();
+        //String s2 = entrada.nextLine();
 
         //vamos a obtener el indice(donde inicia) las subcadenas de la palabra
 
