@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Figuras {
+public class Figurillas {
     double lado, altura, area, perimetro, base, ladoA, ladoB, ladoC;
     int opcion;
     char letra;
@@ -88,7 +88,7 @@ public class Figuras {
     }
 
     public static void main(String[] args) {
-        Figuras obj = new Figuras();
+        Figurillas obj = new Figurillas();
         obj.menu();
     }
 }

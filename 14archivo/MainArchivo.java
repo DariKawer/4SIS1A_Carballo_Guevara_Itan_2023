@@ -1,4 +1,4 @@
-public class Main {
+public class MainArchivo {
 
     public static void main(String[] args) {
         ComponenteArchivo ventana = new ComponenteArchivo();

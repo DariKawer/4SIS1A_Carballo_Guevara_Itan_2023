@@ -1,10 +1,10 @@
 import javax.swing.*;
 import java.awt.event.*;
 
-public class interfaz extends JFrame {
+public class InterfazVentanita extends JFrame {
     
-    public interfaz() {
-        setTitle("Inicio de Sesión");
+    public InterfazVentanita() {
+        setTitle("Inicio de Sesion");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(290, 190);
         setLocationRelativeTo(null);
@@ -54,7 +54,7 @@ public class interfaz extends JFrame {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> 
-        new interfaz()
+        new InterfazVentanita()
         );
     }
 }

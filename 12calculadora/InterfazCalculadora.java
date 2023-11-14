@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 
-public class Interfaz extends JFrame implements ActionListener{
+public class InterfazCalculadora extends JFrame implements ActionListener{
     
     //vamos armar la calculadora
     
@@ -36,7 +36,7 @@ public class Interfaz extends JFrame implements ActionListener{
     //es el contenedor de mi interfaz
     
     //constructor
-    public Interfaz(){
+    public InterfazCalculadora(){
         //inicializo los elementos del frame o ventana
         setLayout(null);
         //localizacion

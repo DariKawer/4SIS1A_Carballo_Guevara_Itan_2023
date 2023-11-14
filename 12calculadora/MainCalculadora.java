@@ -1,7 +1,7 @@
-public class Mainn {
+public class MainCalculadora {
 
     public static void main(String[] args) {
-        Interfaz ventana = new Interfaz();
+        InterfazCalculadora ventana = new InterfazCalculadora();
         ventana.setVisible(true);
     }
     

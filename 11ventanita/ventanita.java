@@ -1,17 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 
-/**
- *
- * @author demon
- */
-//vamos a ver el uso de interfaces
 import javax.swing.*;
 
 
-public class ventanita {
+public class Ventanita {
 
     /**
      * @param args the command line arguments

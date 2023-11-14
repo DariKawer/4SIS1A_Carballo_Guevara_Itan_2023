@@ -1,4 +1,4 @@
-public class Main {
+public class MainVentana {
 
     public static void main(String[] args) {
         Ventana miventana = new Ventana();
