@@ -58,5 +58,25 @@ public class Operaciones {
         }
         return 0;
     }
+
+    public double potencia(){
+        return Math.pow(num1, num2);
+    }
+
+    public double raiz(){
+        return Math.sqrt(num1);
+    }
+
+    public double seno(){
+        return Math.sin(num1);
+    }
+
+    public double coseno(){
+        return Math.cos(num1);
+    }
+
+    public double tangente(){
+        return Math.tan(num1);
+    }
     
 }

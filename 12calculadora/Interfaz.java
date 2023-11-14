@@ -1,6 +1,7 @@
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+
+import java.awt.*;
+import java.awt.event.*;
 
 
 public class Interfaz extends JFrame implements ActionListener{
@@ -17,6 +18,12 @@ public class Interfaz extends JFrame implements ActionListener{
     JButton btnresta;
     JButton btnproducto;
     JButton btndivision;
+    JButton btnpotencia;
+    JButton btnraiz;
+    JButton btnseno;
+    JButton btncoseno;
+    JButton btntangente;
+    JButton borrar;
     
     //etiquetas
     JLabel numero1;
@@ -48,6 +55,7 @@ public class Interfaz extends JFrame implements ActionListener{
     private void componentes() {
         //empiezo con sus definiciones
         panel.setLayout(null);
+        panel.setBackground(new Color(255, 165, 82));
         
         //con la carga de etiqueta
         numero1 = new JLabel("Numero 1");
@@ -64,7 +72,7 @@ public class Interfaz extends JFrame implements ActionListener{
         panel.add(resultado);
         
         mostrarresultado = new JLabel("");
-        mostrarresultado.setBounds(100, 140, 70, 30);
+        mostrarresultado.setBounds(100, 140, 200, 30);
         panel.add(mostrarresultado);
         
         //agrego los campos
@@ -100,6 +108,42 @@ public class Interfaz extends JFrame implements ActionListener{
         panel.add(btndivision);
         //agregamos el listener
         btndivision.addActionListener(this);
+
+        btnpotencia = new JButton("^");
+        btnpotencia.setBounds(200, 200, 50, 50);
+        panel.add(btnpotencia);
+        //agregamos el listener
+        btnpotencia.addActionListener(this);
+
+        btnraiz = new JButton("√");
+        btnraiz.setBounds(200, 270, 50, 50);
+        panel.add(btnraiz);
+        //agregamos el listener
+        btnraiz.addActionListener(this);
+
+        btnseno = new JButton("Seno");
+        btnseno.setBounds(300, 200, 70, 50);
+        panel.add(btnseno);
+        //agregamos el listener
+        btnseno.addActionListener(this);
+
+        btncoseno = new JButton("Cos");
+        btncoseno.setBounds(300, 270, 70, 50);
+        panel.add(btncoseno);
+        //agregamos el listener
+        btncoseno.addActionListener(this);
+
+        btntangente = new JButton("Tan");
+        btntangente.setBounds(400, 270, 70, 50);
+        panel.add(btntangente);
+        //agregamos el listener
+        btntangente.addActionListener(this);
+
+        borrar = new JButton("Borrar");
+        borrar.setBounds(400, 200, 80, 50);
+        panel.add(borrar);
+        //agregamos el listener
+        borrar.addActionListener(this);
       
     }
     
@@ -150,6 +194,49 @@ public class Interfaz extends JFrame implements ActionListener{
             //System.out.println(num2);
             //mostrar resultado
             mostrarresultado.setText(String.valueOf(op.division()));
+        }
+        if(event.getSource() == btnpotencia){
+            double num1 = Double.parseDouble(txtnum1.getText());
+            op.setNum1(num1);
+            //System.out.println(num1);
+            double num2 = Double.parseDouble(txtnum2.getText());
+            op.setNum2(num2);
+            //System.out.println(num2);
+            //mostrar resultado
+            mostrarresultado.setText(String.valueOf(op.potencia()));
+        }
+        if(event.getSource() == btnraiz){
+            double num1 = Double.parseDouble(txtnum1.getText());
+            op.setNum1(num1);
+            //System.out.println(num1);
+            //mostrar resultado
+            mostrarresultado.setText(String.valueOf(op.raiz()));
+        }
+        if(event.getSource() == btnseno){
+            double num1 = Double.parseDouble(txtnum1.getText());
+            op.setNum1(num1);
+            //System.out.println(num1);
+            //mostrar resultado
+            mostrarresultado.setText(String.valueOf(op.seno()));
+        }
+        if(event.getSource() == btncoseno){
+            double num1 = Double.parseDouble(txtnum1.getText());
+            op.setNum1(num1);
+            //System.out.println(num1);
+            //mostrar resultado
+            mostrarresultado.setText(String.valueOf(op.coseno()));
+        }
+        if(event.getSource() == btntangente){
+            double num1 = Double.parseDouble(txtnum1.getText());
+            op.setNum1(num1);
+            //System.out.println(num1);
+            //mostrar resultado
+            mostrarresultado.setText(String.valueOf(op.tangente()));
+        }
+        if(event.getSource() == borrar){
+            txtnum1.setText("");
+            txtnum2.setText("");
+            mostrarresultado.setText("borrado ingrese numeros");
         }
     }
 

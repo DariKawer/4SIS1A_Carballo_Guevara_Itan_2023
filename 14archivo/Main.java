@@ -1,7 +1,7 @@
-public class Mainn {
+public class Main {
 
     public static void main(String[] args) {
-        Interfaz ventana = new Interfaz();
+        ComponenteArchivo ventana = new ComponenteArchivo();
         ventana.setVisible(true);
     }
     
