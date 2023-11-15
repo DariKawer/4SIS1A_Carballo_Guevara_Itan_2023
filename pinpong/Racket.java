@@ -1,49 +1,70 @@
-import java.awt.Graphics;
-import java.awt.Rectangle;
+import java.awt.*;
 
 public class Racket {
-    private static final int WIDTH = 10, HEIGHT = 60;
-    private Pong game;
-    private int up, down;
-    private int x;
-    private int y;
+    private static final int ANCHO = 10;
+    private static final int ALTO = 60;
+    private static final double VELOCIDAD = 4;
+
+    private Pong paneljuego;
+    private int upKey, downKey;
+    private int x, y;
     private double ya;
 
-    public Racket(Pong game, int up, int down, int x) {
-        this.game = game;
+    private static final double VELOCIDAD_FACIL = 1;
+    private static final double VELOCIDAD_MEDIO = 2;
+    private static final double VELOCIDAD_DIFICIL = 4;
+
+    private double velocidad;
+
+    public Racket(Pong paneljuego, int upKey, int downKey, int x) {
+        this.paneljuego = paneljuego;
         this.x = x;
-        y = game.getHeight() / 2;
-        this.up = up;
-        this.down = down;
+        y = paneljuego.getHeight() / 2;
+        this.upKey = upKey;
+        this.downKey = downKey;
+        }
+
+    public void establecerVelocidadFacil() {
+        velocidad = VELOCIDAD_FACIL;
     }
 
-    public void update() {
-        y += ya;
+    public void establecerVelocidadMedio() {
+        velocidad = VELOCIDAD_MEDIO;
+    }
+
+    public void establecerVelocidadDificil() {
+        velocidad = VELOCIDAD_DIFICIL;
+    }
+
+    public void raquetaActualizar() {
+        y += ya * velocidad;
 
         if (y < 0) {
             y = 0;
-        } else if (y > game.getHeight() - HEIGHT - 31) {
-            y = game.getHeight() - HEIGHT - 31;
+        } else if (y > paneljuego.getHeight() - ALTO - 31) {
+            y = paneljuego.getHeight() - ALTO - 31;
         }
     }
 
     public void pressed(int keyCode) {
-        if (keyCode == up)
-            ya = -2.5;
-        else if (keyCode == down)
-            ya = 2.5;
+        if (keyCode == upKey) {
+            ya = -VELOCIDAD;
+        } else if (keyCode == downKey) {
+            ya = VELOCIDAD;
+        }
     }
 
     public void released(int keyCode) {
-        if (keyCode == up || keyCode == down)
+        if (keyCode == upKey || keyCode == downKey) {
             ya = 0;
+        }
     }
 
     public Rectangle getBounds() {
-        return new Rectangle(x, y, WIDTH, HEIGHT);
+        return new Rectangle(x, y, ANCHO, ALTO);
     }
 
     public void paint(Graphics g) {
-        g.fillRect(x, y, WIDTH, HEIGHT);
+        g.fillRect(x, y, ANCHO, ALTO);
     }
 }

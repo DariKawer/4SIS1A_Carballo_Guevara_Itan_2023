@@ -75,10 +75,8 @@ public class Ventana extends JFrame implements ActionListener{
         */
         
         if(e.getSource() == botoncolor){
-            //primero creamos el objeto
-            JColorChooser ventanadecolores = new JColorChooser();
             //definimos la nueva ventnaa
-            color = ventanadecolores.showDialog(
+            color = JColorChooser.showDialog(
                     null, "Seleccione un color", Color.CYAN);
             //lo enviamos al fondo
             panelColor.setBackground(color);

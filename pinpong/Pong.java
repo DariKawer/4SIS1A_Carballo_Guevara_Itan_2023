@@ -1,23 +1,31 @@
-import java.awt.*;
 import javax.swing.*;
 
 public class Pong extends JFrame {
     private PongPanel panel;
+    private ImageIcon imagen = new ImageIcon("pipong.png");
 
     public Pong() {
-        setSize(700, 450);
-        setTitle("Ping Pong");
-        setBackground(new Color(250, 165, 82));
-        setResizable(false);
-
-        setBounds(0, 50, 700, 400);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-
-        panel = new PongPanel(this);
-        add(panel);
+        inicializar();
+        initPanel();
 
         setLocationRelativeTo(null);
         setVisible(true);
+    }
+
+    private void inicializar() {
+        setSize(700, 450);
+        setTitle("Ping Pong - Esc para más");
+        setIconImage(imagen.getImage());
+        setResizable(false);
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+    }
+
+    private void initPanel() {
+        panel = new PongPanel(this);
+        add(panel);
+
+        panel.setFocusable(true);
+        panel.requestFocusInWindow();
     }
 
     public PongPanel getPanel() {
@@ -25,6 +33,6 @@ public class Pong extends JFrame {
     }
 
     public static void main(String[] args) {
-        new Pong();
+        SwingUtilities.invokeLater(() -> new Pong());
     }
 }

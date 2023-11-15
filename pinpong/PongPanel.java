@@ -1,84 +1,163 @@
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-
-import javax.swing.JPanel;
-import javax.swing.Timer;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
 public class PongPanel extends JPanel implements ActionListener, KeyListener {
-    private Pong game;
-    private Ball ball;
-    private Racket player1, player2;
-    private int score1, score2;
+    private Pong paneljuego;
+    private Pelota pelotita;
+    private Racket jugador1, jugador2;
+    private int puntaje1, puntaje2;
+    private boolean pausado;
+    private Timer gameTimer;
 
-    public PongPanel(Pong game) {
-        setBackground(Color.WHITE);
-        this.game = game;
-        ball = new Ball(game);
-        player1 = new Racket(game, KeyEvent.VK_UP, KeyEvent.VK_DOWN, game.getWidth() - 36);
-        player2 = new Racket(game, KeyEvent.VK_W, KeyEvent.VK_S, 20);
-        Timer timer = new Timer(10, this);
-        timer.start();
+    public PongPanel(Pong paneljuego) {
+        setBackground(new Color(124, 195, 97));
+        this.paneljuego = paneljuego;
+        pelotita = new Pelota(paneljuego);
+        jugador1 = new Racket(paneljuego, KeyEvent.VK_UP, KeyEvent.VK_DOWN, paneljuego.getWidth() - 36);
+        jugador2 = new Racket(paneljuego, KeyEvent.VK_W, KeyEvent.VK_S, 20);
+
+        gameTimer = new Timer(5, this);
+        gameTimer.start();
+
         addKeyListener(this);
         setFocusable(true);
+        requestFocusInWindow();
     }
 
-    public Racket getPlayer(int playerNo) {
-        if (playerNo == 1)
-            return player1;
+    public Racket getPlayer(int jugadorNo) {
+        return (jugadorNo == 1) ? jugador1 : jugador2;
+    }
+
+    public void aumentarpuntaje(int jugadorNo) {
+        if (jugadorNo == 1)
+            puntaje1++;
         else
-            return player2;
+            puntaje2++;
     }
 
-    public void increaseScore(int playerNo) {
-        if (playerNo == 1)
-            score1++;
-        else
-            score2++;
+    public int getPuntaje(int jugadorNo) {
+        return (jugadorNo == 1) ? puntaje1 : puntaje2;
     }
 
-    public int getScore(int playerNo) {
-        if (playerNo == 1)
-            return score1;
-        else
-            return score2;
+    private void actualizar() {
+        if (!pausado) {
+            pelotita.pelotitaActualizar();
+            jugador1.raquetaActualizar();
+            jugador2.raquetaActualizar();
+        }
     }
 
-    private void update() {
-        ball.update();
-        player1.update();
-        player2.update();
-    }
+    private void verMenu() {
+        pausa();
 
-    public void actionPerformed(ActionEvent e) {
-        update();
-        repaint();
-    }
+        String[] options = {"Facil", "Medio", "Dificil", "Salir"};
+        int choice = JOptionPane.showOptionDialog(this, "Selecciona la dificultad o sal del juego:", "Esc para salir y para entrar o pulsa --->",
+                JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
 
-    public void keyPressed(KeyEvent e) {
-        player1.pressed(e.getKeyCode());
-        player2.pressed(e.getKeyCode());
-    }
+        gameTimer.stop();
+        switch (choice) {
+            case 0:
+            pelotita.establecerVelocidadFacil();
+            jugador1.establecerVelocidadFacil();
+            jugador2.establecerVelocidadFacil();
 
-    public void keyReleased(KeyEvent e) {
-        player1.released(e.getKeyCode());
-        player2.released(e.getKeyCode());
-    }
+            gameTimer = new Timer(15, this);
+            gameTimer.start();
 
-    public void keyTyped(KeyEvent e) {
-        ;
+            pelotita.reinciarPelotita();
+            pelotita.resetearJuego();
+            break;
+        case 1:
+            pelotita.establecerVelocidadMedio();
+            jugador1.establecerVelocidadMedio();
+            jugador2.establecerVelocidadMedio();
+
+            gameTimer = new Timer(14, this);
+            gameTimer.start();
+
+            pelotita.reinciarPelotita();
+            pelotita.resetearJuego();
+            break;
+        case 2:
+            pelotita.establecerVelocidadDificil();
+            jugador1.establecerVelocidadDificil();
+            jugador2.establecerVelocidadDificil();
+
+            gameTimer = new Timer(12, this);
+            gameTimer.start();
+
+            pelotita.reinciarPelotita();
+            pelotita.resetearJuego();
+            break;
+            case 3:
+                int respuesta = JOptionPane.showConfirmDialog(null, "¿Estás seguro de querer salir?", "Pong", JOptionPane.YES_NO_OPTION);
+
+                if (respuesta == JOptionPane.YES_OPTION) {
+                    System.exit(0);
+                } else {
+                renaudar();
+                }
+                break;
+        }
+
+        renaudar();
+        gameTimer.start();
     }
 
     @Override
-    public void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        g.drawString("Jugador 1: " + game.getPanel().getScore(1) + " | " + "Jugador 2: " + game.getPanel().getScore(2),
-                game.getWidth() / 3 + 50, 10);
-        ball.paint(g);
-        player1.paint(g);
-        player2.paint(g);
+    public void actionPerformed(ActionEvent e) {
+        actualizar();
+        repaint();
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+            verMenu();
+        } else {
+            jugador1.pressed(e.getKeyCode());
+            jugador2.pressed(e.getKeyCode());
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        jugador1.released(e.getKeyCode());
+        jugador2.released(e.getKeyCode());
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+    }
+
+   
+    
+public void paintComponent(Graphics g) {
+    super.paintComponent(g);
+
+    int jugador1Puntaje = getPuntaje(1);
+    int jugador2Puntaje = getPuntaje(2);
+
+    String puntajeText = String.format("Jugador 1: %d | Jugador 2: %d", jugador1Puntaje, jugador2Puntaje);
+    g.drawString(puntajeText, paneljuego.getWidth() / 3 + 50, 10);
+
+    pelotita.paint(g);
+    jugador1.paint(g);
+    jugador2.paint(g);
+}
+
+
+    public void pausa() {
+        pausado = true;
+    }
+
+    public void renaudar() {
+        pausado = false;
+    }
+
+    public void resetearPuntaje() {
+        puntaje1 = 0;
+        puntaje2 = 0;
     }
 }
