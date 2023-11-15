@@ -9,11 +9,13 @@ public class MainPong {
      * 
      * lo mio:
      * -3 dificultades
-     * -facil - la pelota ira lenta
-     * -medio - la pelota ira rapida
-     * -dficil - la pelota ira super rapido
+     * Al elegir una de de estas, la pelota reincia su posicion y el contador de score se reinicia tambien
+     * -facil - la raqueta ira rapida y la pelota ira lenta
+     * -medio - la raqueta ira medio rapido-lenta y la pelota ira rapida
+     * -dficil - la raqueta ira lenta (pero no tan lenta xd) y la pelota ira super rapido
      * -menu con las dificultades
      * -boton para salir en el menu
+     * -Esc para pausar el juego y mostrar el menu
      */
     
     public static void main(String[] args) {

@@ -9,9 +9,10 @@ public class Pelota {
     private int x, y;
     private double xa = 1, ya = 1;
 
-    private static final double VELOCIDAD_FACIL = 1;
-    private static final double VELOCIDAD_MEDIO = 2;
+    private static final double VELOCIDAD_FACIL = 2;
+    private static final double VELOCIDAD_MEDIO = 3;
     private static final double VELOCIDAD_DIFICIL = 4;
+    private static final int RADIO = 15;
 
     private double velocidad;
 
@@ -113,7 +114,7 @@ public class Pelota {
     }
 
     public void paint(Graphics g) {
-        g.fillRect(x, y, ANCHO, ALTO);
-        g.setColor(new Color(16, 16, 150));
+        g.setColor(Color.WHITE);
+        g.fillOval(x, y, RADIO * 2, RADIO * 2);
     }
 }

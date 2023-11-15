@@ -3,16 +3,16 @@ import java.awt.*;
 public class Racket {
     private static final int ANCHO = 10;
     private static final int ALTO = 60;
-    private static final double VELOCIDAD = 4;
+    private static final double VELOCIDAD = 2;
 
     private Pong paneljuego;
     private int upKey, downKey;
     private int x, y;
     private double ya;
 
-    private static final double VELOCIDAD_FACIL = 1;
-    private static final double VELOCIDAD_MEDIO = 2;
-    private static final double VELOCIDAD_DIFICIL = 4;
+    private static final double VELOCIDAD_FACIL = 6;
+    private static final double VELOCIDAD_MEDIO = 3;
+    private static final double VELOCIDAD_DIFICIL = 2;
 
     private double velocidad;
 

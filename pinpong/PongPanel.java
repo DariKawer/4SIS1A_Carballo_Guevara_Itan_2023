@@ -62,8 +62,8 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
             jugador1.establecerVelocidadFacil();
             jugador2.establecerVelocidadFacil();
 
-            gameTimer = new Timer(15, this);
-            gameTimer.start();
+            //gameTimer = new Timer(5, this);
+            //gameTimer.start();
 
             pelotita.reinciarPelotita();
             pelotita.resetearJuego();
@@ -73,8 +73,8 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
             jugador1.establecerVelocidadMedio();
             jugador2.establecerVelocidadMedio();
 
-            gameTimer = new Timer(14, this);
-            gameTimer.start();
+            //gameTimer = new Timer(5, this);
+            //gameTimer.start();
 
             pelotita.reinciarPelotita();
             pelotita.resetearJuego();
@@ -83,9 +83,9 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
             pelotita.establecerVelocidadDificil();
             jugador1.establecerVelocidadDificil();
             jugador2.establecerVelocidadDificil();
-
-            gameTimer = new Timer(12, this);
-            gameTimer.start();
+//
+            //gameTimer = new Timer(5, this);
+            //gameTimer.start();
 
             pelotita.reinciarPelotita();
             pelotita.resetearJuego();
@@ -136,11 +136,17 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 public void paintComponent(Graphics g) {
     super.paintComponent(g);
 
+    g.setColor(Color.BLACK);
+    g.drawLine(paneljuego.getWidth() / 2, 0, paneljuego.getWidth() / 2, paneljuego.getHeight());
+
     int jugador1Puntaje = getPuntaje(1);
     int jugador2Puntaje = getPuntaje(2);
 
-    String puntajeText = String.format("Jugador 1: %d | Jugador 2: %d", jugador1Puntaje, jugador2Puntaje);
-    g.drawString(puntajeText, paneljuego.getWidth() / 3 + 50, 10);
+    g.setColor(Color.BLACK);
+    g.setFont(new Font("Arial", Font.BOLD, 20));
+
+    String puntajeText = String.format("Jugador 1: %d         Jugador 2: %d", jugador1Puntaje, jugador2Puntaje);
+    g.drawString(puntajeText, paneljuego.getWidth() / 2 - 150, 15);
 
     pelotita.paint(g);
     jugador1.paint(g);
